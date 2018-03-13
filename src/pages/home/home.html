@@ -1,8 +1,8 @@
-<ion-content>
+<ion-content [style.background-color]="slideColor" [@colorFade]='slideColor'>
   <ion-slides pager (ionSlideDidChange)="slideChanged()" (ionSlideDrag)="slideMoved()">
     <ion-slide>
-      <div class="diag" style="background: url('assets/imgs/whitebg.svg') no-repeat">
-        <ion-icon ios="ios-book" md="md-book" color="primary" [@smoothSwipe]='state' (@smoothSwipe.done)="animationDone($event)"></ion-icon>
+      <div class="diag" style="background: url('assets/imgs/whitebg.svg') no-repeat ">
+        <ion-icon ios="ios-book" md="md-book" [style.color]="slideColor" [@smoothSwipe]='state' (@smoothSwipe.done)="animationDone($event)"></ion-icon>
       </div>
       <div [@smoothSwipe]='state'>
         <h2>
@@ -15,7 +15,7 @@
     </ion-slide>
     <ion-slide>
       <div class="diag" style="background: url('assets/imgs/whitebg.svg') no-repeat">
-        <ion-icon ios="ios-people" md="md-people" color="primary" [@smoothSwipe]='state'></ion-icon>
+        <ion-icon ios="ios-people" md="md-people" [style.color]="slideColor" [@smoothSwipe]='state'></ion-icon>
       </div>
       <div [@smoothSwipe]='state'>
         <h2>
@@ -28,7 +28,7 @@
     </ion-slide>
     <ion-slide>
       <div class="diag" style="background: url('assets/imgs/whitebg.svg') no-repeat">
-        <ion-icon ios="ios-happy" md="md-happy" color="primary" [@smoothSwipe]='state'></ion-icon>
+        <ion-icon ios="ios-happy" md="md-happy" [style.color]="slideColor" [@smoothSwipe]='state'></ion-icon>
       </div>
       <div [@smoothSwipe]='state'>
         <h2>
