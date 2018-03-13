@@ -1,10 +1,10 @@
 <ion-content>
-  <ion-slides pager (ionSlideDidChange)="slideChanged()">
+  <ion-slides pager (ionSlideDidChange)="slideChanged()" (ionSlideDrag)="slideMoved()">
     <ion-slide>
       <div class="diag" style="background: url('assets/imgs/whitebg.svg') no-repeat">
-        <ion-icon ios="ios-book" md="md-book" color="primary"></ion-icon>
+        <ion-icon ios="ios-book" md="md-book" color="primary" [@smoothSwipe]='state' (@smoothSwipe.done)="animationDone($event)"></ion-icon>
       </div>
-      <div>
+      <div [@smoothSwipe]='state'>
         <h2>
           Get any book anywhere.
         </h2>
@@ -15,9 +15,9 @@
     </ion-slide>
     <ion-slide>
       <div class="diag" style="background: url('assets/imgs/whitebg.svg') no-repeat">
-        <ion-icon ios="ios-people" md="md-people" color="primary"></ion-icon>
+        <ion-icon ios="ios-people" md="md-people" color="primary" [@smoothSwipe]='state'></ion-icon>
       </div>
-      <div>
+      <div [@smoothSwipe]='state'>
         <h2>
           Make friends.
         </h2>
@@ -28,9 +28,9 @@
     </ion-slide>
     <ion-slide>
       <div class="diag" style="background: url('assets/imgs/whitebg.svg') no-repeat">
-        <ion-icon ios="ios-happy" md="md-happy" color="primary"></ion-icon>
+        <ion-icon ios="ios-happy" md="md-happy" color="primary" [@smoothSwipe]='state'></ion-icon>
       </div>
-      <div>
+      <div [@smoothSwipe]='state'>
         <h2>
           Have fun !
         </h2>
@@ -40,7 +40,7 @@
       </div>
     </ion-slide>
   </ion-slides>
-  
+
   <button (click)="skip()" id="skip">{{ skipMsg }}</button>
 
 </ion-content>
